@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - OrganikSejahtera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/animation.js"></script>   
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-primary">
+    
+    <header> 
+        <nav class="bg-white text-black p-4 shadow-lg">
+            <div class="container mx-auto flex items-center justify-between">
+                <img src="../src/img/logov2.png" alt="Logo OrganikSejahtera" class="max-h-16 max-w-[180px]">
+                <div class="hidden md:block">
+                    <ul class="flex gap-14 text-base font-semibold">
+                        <li><a href="/public/index.html" class="hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="/public/product-list.html" class="hover:text-secondary transition-colors">Produk</a></li>
+                        <li><a href="/public/about.html" class="hover:text-secondary transition-colors">Tentang Kami</a></li>
+                        <li><a href="/public/contact.html" class="hover:text-secondary transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <a href="./cart.html" class="md:block hidden ri-shopping-cart-fill h-8 w-5"></a>
+                
+                <button class="md:hidden focus:outline-none" id="menuToggle" aria-label="Toggle menu">
+                    <i class="ri-menu-3-line text-2xl transition-all duration-300 max-h-16 max-w-16" id="menuIcon"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileDropdown" class="md:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out bg-white">
+                <ul class="space-y-2 py-4 px-4">
+                    <li><a href="/public/index.html" class="block py-2 hover:bg-[#e6f1e8] nav-link">Home</a></li>
+                    <li><a href="/public/product-list.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Produk</a></li>
+                    <li><a href="/public/about.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Tentang Kami</a></li>
+                    <li><a href="/public/contact.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-8 md:py-12 px-4 md:px-20 bg-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+                <!-- Product Images -->
+                <div class="md:w-1/2">
+                    <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                        <div id="mainImage" class="w-full h-96 bg-gray-200 flex items-center justify-center text-gray-500">Main Product Image</div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="cursor-pointer border-2 border-transparent hover:border-secondary rounded-lg overflow-hidden transition-all">
+                            <div class="w-full h-24 bg-gray-200 flex items-center justify-center text-gray-500 text-sm">Thumb 1</div>
+                        </div>
+                        <div class="cursor-pointer border-2 border-transparent hover:border-secondary rounded-lg overflow-hidden transition-all">
+                            <div class="w-full h-24 bg-gray-200 flex items-center justify-center text-gray-500 text-sm">Thumb 2</div>
+                        </div>
+                        <div class="cursor-pointer border-2 border-transparent hover:border-secondary rounded-lg overflow-hidden transition-all">
+                            <div class="w-full h-24 bg-gray-200 flex items-center justify-center text-gray-500 text-sm">Thumb 3</div>
+                        </div>
+                        <div class="cursor-pointer border-2 border-transparent hover:border-secondary rounded-lg overflow-hidden transition-all">
+                            <div class="w-full h-24 bg-gray-200 flex items-center justify-center text-gray-500 text-sm">Thumb 4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="md:w-1/2">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">Lorem ipsum dolor sit.</h1>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-4">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                        </div>
+                        <span class="text-gray-600">(24 ulasan)</span>
+                    </div>
+
+                    <div class="bg-accent/20 p-4 rounded-lg mb-6">
+                        <span class="text-2xl font-bold text-primary">Rp 75.000</span>
+                        <span class="text-sm text-gray-500 line-through ml-2">Rp 90.000</span>
+                        <span class="bg-secondary text-white text-xs px-2 py-1 rounded ml-2">16% OFF</span>
+                    </div>
+
+                    <p class="mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quisquam illo corrupti perferendis unde accusamus! Aliquid obcaecati architecto asperiores labore sunt tempore earum blanditiis officia.</p>
+
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-lg mb-2">Keunggulan Produk:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="ri-checkbox-circle-fill text-accent mr-2"></i>
+                                Lorem ipsum dolor sit.
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-checkbox-circle-fill text-accent mr-2"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-checkbox-circle-fill text-accent mr-2"></i>
+                                Lorem ipsum dolor sit amet consectetur.
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-checkbox-circle-fill text-accent mr-2"></i>
+                                Lorem ipsum dolor sit amet consectetur adipisicing.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-lg mb-2">Isi Paket:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est repudiandae minus incidunt perspiciatis minima doloremque.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-secondary hover:bg-primary text-white py-3 px-6 rounded-lg transition flex items-center justify-center">
+                            <i class="ri-shopping-cart-2-line mr-2"></i> Tambah ke Keranjang
+                        </button>
+                        <button class="bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg transition flex items-center justify-center">
+                            <i class="ri-heart-line mr-2"></i> Simpan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="py-8 md:py-12 px-4 md:px-20 bg-white">
+        <div class="container mx-auto">
+            <div class="border-b border-gray-200 pb-4 mb-8">
+                <h2 class="text-2xl font-bold">Deskripsi Produk</h2>
+            </div>
+            
+            <div class="prose max-w-none">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odio ratione eveniet quod deleniti laudantium modi eius hic ea recusandae, sit nisi sunt minus suscipit.</p>
+                
+                <h3 class="text-xl font-semibold mt-6">Keunggulan:</h3>
+                <ul>
+                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, culpa.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, laudantium?</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                </ul>
+                
+                <h3 class="text-xl font-semibold mt-6">Cara Penyimpanan:</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque eaque voluptatum vero repellendus corporis sed labore? Labore, sequi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-8 md:py-12 px-4 md:px-20 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-8">Produk Lainnya</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">Buah Organik</div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Paket Buah Organik</h3>
+                        <p class="text-gray-600 text-sm mb-3">Beragam buah musiman organik</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">Rp 95.000</span>
+                            <button class="bg-accent hover:bg-secondary text-primary px-3 py-1 rounded-lg text-sm transition">Lihat</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">Beras Organik</div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Beras Organik Premium</h3>
+                        <p class="text-gray-600 text-sm mb-3">Beras merah & putih organik</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">Rp 65.000/kg</span>
+                            <button class="bg-accent hover:bg-secondary text-primary px-3 py-1 rounded-lg text-sm transition">Lihat</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">Telur Organik</div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Telur Ayam Organik</h3>
+                        <p class="text-gray-600 text-sm mb-3">Kemasan 10 butir</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">Rp 35.000</span>
+                            <button class="bg-accent hover:bg-secondary text-primary px-3 py-1 rounded-lg text-sm transition">Lihat</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">Madu Organik</div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Madu Murni Organik</h3>
+                        <p class="text-gray-600 text-sm mb-3">Kemasan 250ml</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">Rp 120.000</span>
+                            <button class="bg-accent hover:bg-secondary text-primary px-3 py-1 rounded-lg text-sm transition">Lihat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-light py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="../src/img/logo-white.png" alt="Logo OrganikSejahtera" class="max-h-18 max-w-[240px] mb-4">
+                    <p>Menyediakan produk pertanian organik berkualitas sejak 2010.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="hover:text-accent transition"><i class="ri-facebook-fill text-xl"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="ri-instagram-line text-xl"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="ri-twitter-fill text-xl"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="ri-youtube-fill text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/public/index.html" class="hover:text-accent transition">Home</a></li>
+                        <li><a href="/public/product-list.html" class="hover:text-accent transition">Produk</a></li>
+                        <li><a href="/public/about.html" class="hover:text-accent transition">Tentang Kami</a></li>
+                        <li><a href="/public/contact.html" class="hover:text-accent transition">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Produk</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent transition">Sayuran Organik</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Buah-buahan Organik</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Beras Organik</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Produk Olahan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Hubungi Kami</h4>
+                    <address class="not-italic">
+                        Jl. Dukuh Kupang No. 123<br>
+                        Surabaya, Jawa Timur<br>
+                        Indonesia<br>
+                        <br>
+                        Email: account@organiksejahtera.id<br>
+                        Telepon: (022) 1234567
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-light/20 mt-8 pt-8 text-center">
+                <p>&copy; 2023 OrganikSejahtera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileDropdown = document.getElementById('mobileDropdown');
+        const menuIcon = document.getElementById('menuIcon');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileDropdown.classList.remove('max-h-0', 'opacity-0');
+                mobileDropdown.classList.add('max-h-96', 'opacity-100');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuIcon.classList.remove('ri-menu-3-line');
+                menuIcon.classList.add('ri-close-large-line');
+            } else {
+                mobileDropdown.classList.remove('max-h-96', 'opacity-100');
+                mobileDropdown.classList.add('max-h-0', 'opacity-0');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.remove('ri-close-large-line');
+                menuIcon.classList.add('ri-menu-3-line');
+            }
+        });
+
+        // Change product image
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+        }
+
+        // Quantity selector
+        const quantityInput = document.querySelector('.quantity-input');
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (button.textContent === '+') {
+                    quantityInput.value = value + 1;
+                } else {
+                    if (value > 1) {
+                        quantityInput.value = value - 1;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

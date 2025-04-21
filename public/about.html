@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - OrganikSejahtera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/animation.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#285430',
+                        secondary: '#5F8D4E',
+                        accent: '#A4BE7B',
+                        light: '#E5D9B6',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background-color: #A4BE7B;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-primary">
+
+    <!-- Header/Navbar -->
+    <header> 
+        <nav class="bg-white text-black p-4 shadow-lg">
+            <div class="container mx-auto flex items-center justify-between">
+                <img src="../src/img/logov2.png" alt="Logo OrganikSejahtera" class="max-h-16 max-w-[180px]">
+                <div class="hidden md:block">
+                    <ul class="flex gap-14 text-base font-semibold">
+                        <li><a href="/public/index.html" class="hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="/public/product-list.html" class="hover:text-secondary transition-colors">Produk</a></li>
+                        <li><a href="/public/about.html" class="hover:text-secondary transition-colors text-secondary">Tentang Kami</a></li>
+                        <li><a href="/public/contact.html" class="hover:text-secondary transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <a href="./cart.html" class="md:block hidden ri-shopping-cart-fill h-8 w-5"></a>
+
+                <button class="md:hidden focus:outline-none" id="menuToggle" aria-label="Toggle menu">
+                    <i class="ri-menu-3-line text-2xl transition-all duration-300 max-h-16 max-w-16" id="menuIcon"></i>
+                </button>
+            </div>
+            <div id="mobileDropdown" class="md:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out bg-white">
+                <ul class="space-y-2 py-4 px-4">
+                    <li><a href="/public/index.html" class="block py-2 hover:bg-[#e6f1e8] nav-link">Home</a></li>
+                    <li><a href="/public/product-list.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Produk</a></li>
+                    <li><a href="/public/about.html" class="block py-2 hover:bg-[#E6F1E8] nav-link text-secondary">Tentang Kami</a></li>
+                    <li><a href="/public/contact.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('../src/img/about-hero.jpg')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-4 md:px-20 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Tentang OrganikSejahtera</h1>
+                <p class="text-xl md:text-2xl text-primary/80">Perjalanan kami dalam menyediakan produk organik berkualitas untuk keluarga Indonesia sejak 2010</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section class="py-16 px-4 md:px-20 bg-white" id="tentang">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 overflow-hidden">
+                    <img src="/src/img/about.jpg" alt="Tentang OrganikSejahtera" 
+                        class="rounded-xl shadow-xl w-full translate-x-[-100%] opacity-0 transition-all duration-1000 ease-in-out"
+                        id="aboutImage">
+                </div>
+                <div class="md:w-1/2 overflow-hidden">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary translate-x-[100%] opacity-0 transition-all duration-1000 ease-in-out" id="aboutTitle">Tentang OrganikSejahtera</h2>
+                    <p class="text-lg mb-4 text-primary translate-x-[100%] opacity-0 transition-all duration-1000 ease-in-out" id="aboutText1">OrganikSejahtera lahir dari kecintaan terhadap alam dan keinginan untuk menyediakan makanan sehat bagi keluarga Indonesia. Didirikan pada tahun 2010 oleh sekelompok petani di Jawa Barat, kami kini telah berkembang menjadi salah satu penyedia produk organik terpercaya.</p>
+                    <p class="text-lg mb-6 text-primary translate-x-[100%] opacity-0 transition-all duration-1000 ease-in-out" id="aboutText2">Kami bekerja sama dengan lebih dari 200 petani lokal yang menerapkan praktik pertanian berkelanjutan, menjaga keseimbangan ekosistem, dan menghasilkan produk berkualitas tinggi tanpa bahan kimia berbahaya.</p>
+                    <div class="flex flex-wrap gap-4" id="statsContainer">
+                        <div class="bg-accent px-6 py-3 rounded-lg text-center scale-0 transition-transform duration-500" id="stat1">
+                            <span class="block text-2xl font-bold text-primary">200+</span>
+                            <span class="text-primary">Petani Mitra</span>
+                        </div>
+                        <div class="bg-accent px-6 py-3 rounded-lg text-center scale-0 transition-transform duration-500" id="stat2">
+                            <span class="block text-2xl font-bold text-primary">50+</span>
+                            <span class="text-primary">Jenis Produk</span>
+                        </div>
+                        <div class="bg-accent px-6 py-3 rounded-lg text-center scale-0 transition-transform duration-500" id="stat3">
+                            <span class="block text-2xl font-bold text-primary">10.000+</span>
+                            <span class="text-primary">Pelanggan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi Misi Section -->
+    <section class="py-16 px-4 md:px-20 bg-light">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Visi & Misi Kami</h2>
+                <p class="max-w-2xl mx-auto text-lg">Dasar dari segala yang kami lakukan untuk menciptakan masa depan yang lebih sehat</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="ri-eye-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Visi</h3>
+                    </div>
+                    <p class="text-lg mb-4">Menjadi pelopor pertanian organik berkelanjutan di Indonesia yang berkontribusi pada kesehatan masyarakat dan kelestarian lingkungan.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-accent mt-1 mr-2"></i>
+                            <span>Mewujudkan ketahanan pangan yang berkelanjutan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-accent mt-1 mr-2"></i>
+                            <span>Meningkatkan kesadaran masyarakat akan pentingnya makanan organik</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-accent mt-1 mr-2"></i>
+                            <span>Menjadi model bisnis pertanian yang mengutamakan ekosistem</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="ri-list-check text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Misi</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-accent text-primary rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <span>Menyediakan produk pertanian organik berkualitas tinggi dengan harga terjangkau</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-accent text-primary rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <span>Memberdayakan petani lokal dengan pelatihan dan pendampingan pertanian organik</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-accent text-primary rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <span>Mengembangkan sistem distribusi yang efisien untuk mempertahankan kesegaran produk</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-accent text-primary rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <span>Edukasi masyarakat tentang gaya hidup sehat melalui produk organik</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sejarah Section -->
+    <section class="py-16 px-4 md:px-20 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Perjalanan Kami</h2>
+                <p class="max-w-2xl mx-auto text-lg">Cerita dibalik berkembangnya OrganikSejahtera dari waktu ke waktu</p>
+            </div>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative pl-8 pb-12">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-md"></div>
+                    <div class="bg-light p-6 rounded-lg shadow-md">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Pendirian OrganikSejahtera</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">2010</span>
+                        </div>
+                        <p>Dimulai dari 5 petani di Jawa Barat yang memiliki visi sama tentang pertanian berkelanjutan. Awalnya hanya menyediakan sayuran organik untuk komunitas lokal.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item relative pl-8 pb-12">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-md"></div>
+                    <div class="bg-light p-6 rounded-lg shadow-md">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Ekspansi ke Pasar Digital</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">2015</span>
+                        </div>
+                        <p>Meluncurkan platform online pertama kami untuk menjangkau lebih banyak pelanggan. Jaringan petani berkembang menjadi 50 mitra.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item relative pl-8 pb-12">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-md"></div>
+                    <div class="bg-light p-6 rounded-lg shadow-md">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Sertifikasi Organik Nasional</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">2018</span>
+                        </div>
+                        <p>Mendapatkan sertifikasi organik resmi dari lembaga sertifikasi nasional, meningkatkan kepercayaan konsumen terhadap produk kami.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item relative pl-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-md"></div>
+                    <div class="bg-light p-6 rounded-lg shadow-md">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Ekspansi Nasional</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">2023</span>
+                        </div>
+                        <p>Kini memiliki lebih dari 200 petani mitra di 5 provinsi dan melayani lebih dari 10.000 pelanggan setia di seluruh Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tim Kami Section -->
+    <section class="py-16 px-4 md:px-20 bg-light">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tim Kami</h2>
+                <p class="max-w-2xl mx-auto text-lg">Orang-orang dibalik kesuksesan OrganikSejahtera</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300">
+                    <img src="../src/img//account-circle-fill.png" alt="Budi Santoso" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Budi Santoso</h3>
+                        <p class="text-secondary mb-3">Founder & CEO</p>
+                        <p class="text-sm text-gray-600">Mantan petani konvensional yang beralih ke organik sejak 2008. Memimpin visi perusahaan.</p>
+                        <div class="flex mt-4 space-x-3">
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-linkedin-fill"></i></a>
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-twitter-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300">
+                    <img src="../src/img/account-circle-fill.png" alt="Dewi Lestari" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Dewi Lestari</h3>
+                        <p class="text-secondary mb-3">Head of Agriculture</p>
+                        <p class="text-sm text-gray-600">Ahli pertanian organik lulusan IPB. Bertanggung jawab atas kualitas produk.</p>
+                        <div class="flex mt-4 space-x-3">
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-linkedin-fill"></i></a>
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-instagram-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300">
+                    <img src="../src/img/account-circle-fill.png" alt="Ahmad Fauzi" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Ahmad Fauzi</h3>
+                        <p class="text-secondary mb-3">Head of Operations</p>
+                        <p class="text-sm text-gray-600">Mengelola logistik dan distribusi untuk memastikan produk sampai segar.</p>
+                        <div class="flex mt-4 space-x-3">
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300">
+                    <img src="../src/img/account-circle-fill.png" alt="Rina Wijaya" class="w-full h-64 object-cover"> 
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Rina Wijaya</h3>
+                        <p class="text-secondary mb-3">Marketing Director</p>
+                        <p class="text-sm text-gray-600">Membangun brand awareness dan hubungan dengan pelanggan.</p>
+                        <div class="flex mt-4 space-x-3">
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-linkedin-fill"></i></a>
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="text-primary hover:text-accent"><i class="ri-twitter-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nilai Kami Section -->
+    <section class="py-16 px-4 md:px-20 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nilai-Nilai Kami</h2>
+                <p class="max-w-2xl mx-auto text-lg">Prinsip yang memandu setiap keputusan dan tindakan kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="shadow-2xl p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 animate-bounce-less">
+                        <i class="ri-leaf-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Keberlanjutan</h3>
+                    <p class="text-gray-600">Kami berkomitmen pada praktik pertanian yang melestarikan lingkungan untuk generasi mendatang.</p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="shadow-2xl p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 animate-bounce-less">
+                        <i class="ri-hand-heart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Integritas</h3>
+                    <p class="text-gray-600">Kejujuran dan transparansi dalam setiap aspek bisnis kami, dari lahan ke meja makan.</p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="shadow-2xl p-8 rounded-xl text-center">
+                    <div class="bg-primary text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 animate-bounce-less">
+                        <i class="ri-community-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Pemberdayaan</h3>
+                    <p class="text-gray-600">Memberdayakan petani lokal dan menciptakan dampak sosial positif bagi komunitas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-light py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="../src/img/logo-white.png" alt="Logo OrganikSejahtera" class="max-h-18 max-w-[240px] mb-4">
+                    <p>Menyediakan produk pertanian organik berkualitas sejak 2010.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="hover:text-accent transition"><i class="ri-facebook-fill text-xl"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="ri-instagram-line text-xl"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="ri-twitter-fill text-xl"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="ri-youtube-fill text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/public/index.html" class="hover:text-accent transition">Home</a></li>
+                        <li><a href="/public/product-list.html" class="hover:text-accent transition">Produk</a></li>
+                        <li><a href="/public/about.html" class="hover:text-accent transition">Tentang Kami</a></li>
+                        <li><a href="/public/contact.html" class="hover:text-accent transition">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Produk</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent transition">Sayuran Organik</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Buah-buahan Organik</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Beras Organik</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Produk Olahan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Hubungi Kami</h4>
+                    <address class="not-italic">
+                        Jl. Dukuh Kupang No. 123<br>
+                        Surabaya, Jawa Timur<br>
+                        Indonesia<br>
+                        <br>
+                        Email: account@organiksejahtera.id<br>
+                        Telepon: (022) 1234567
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-light/20 mt-8 pt-8 text-center">
+                <p>&copy; 2023 OrganikSejahtera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileDropdown = document.getElementById('mobileDropdown');
+        const menuIcon = document.getElementById('menuIcon');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileDropdown.classList.remove('max-h-0', 'opacity-0');
+                mobileDropdown.classList.add('max-h-96', 'opacity-100');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuIcon.classList.remove('ri-menu-3-line');
+                menuIcon.classList.add('ri-close-large-line');
+            } else {
+                mobileDropdown.classList.remove('max-h-96', 'opacity-100');
+                mobileDropdown.classList.add('max-h-0', 'opacity-0');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.remove('ri-close-large-line');
+                menuIcon.classList.add('ri-menu-3-line');
+            }
+        });
+
+        // Animation for about section
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSection = document.getElementById('tentang');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate image
+                        document.getElementById('aboutImage').classList.remove('translate-x-[-100%]', 'opacity-0');
+                        
+                        // Animate title and text with delays
+                        setTimeout(() => {
+                            document.getElementById('aboutTitle').classList.remove('translate-x-[100%]', 'opacity-0');
+                        }, 200);
+                        
+                        setTimeout(() => {
+                            document.getElementById('aboutText1').classList.remove('translate-x-[100%]', 'opacity-0');
+                        }, 400);
+                        
+                        setTimeout(() => {
+                            document.getElementById('aboutText2').classList.remove('translate-x-[100%]', 'opacity-0');
+                        }, 600);
+                        
+                        // Animate stats
+                        setTimeout(() => {
+                            document.getElementById('stat1').classList.remove('scale-0');
+                        }, 800);
+                        
+                        setTimeout(() => {
+                            document.getElementById('stat2').classList.remove('scale-0');
+                        }, 1000);
+                        
+                        setTimeout(() => {
+                            document.getElementById('stat3').classList.remove('scale-0');
+                        }, 1200);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(aboutSection);
+        });
+    </script>
+</body>
+</html>

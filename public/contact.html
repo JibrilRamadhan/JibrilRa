@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/public/js/animation.js"></script>
+    <style>
+        html{
+          scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif; 
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        </style>
+</head>
+<body class="scroll-smooth">
+    <header> 
+        <nav class="bg-white text-black p-4 shadow-lg">
+          <div class="container mx-auto flex items-center justify-between">
+            
+            <!-- Logo -->
+            <img src="../src/img/logov2.png" alt="Logo OrganikSejahtera" class="max-h-16 max-w-[180px]">
+      
+            <!-- Menu desktop - hanya muncul di md ke atas -->
+            <div class="hidden md:block">
+              <ul class="flex gap-14 text-base font-semibold">
+                <li><a href="/public/index.html" class="hover:text-[#4B6043] transition-colors">Home</a></li>
+                <li><a href="/public/product-list.html" class="hover:text-[#4B6043] transition-colors">Produk</a></li>
+                <li><a href="/public/about.html" class="hover:text-[#4B6043] transition-colors">Tentang Kami</a></li>
+                <li><a href="/public/contact.html" class="hover:text-[#4B6043] transition-colors">Kontak</a></li>
+              </ul>
+            </div>
+      
+            <a href="./cart.html" class="ri-shopping-cart-fill md:block hidden h-8 w-5"></a>
+            
+            <!-- Hamburger button - hanya muncul di mobile -->
+            <button class="md:hidden focus:outline-none" id="menuToggle" aria-label="Toggle menu">
+             <i class="ri-menu-3-line text-2xl transition-all duration-300 max-h-16 max-w-16" id="menuIcon"></i>
+            </button>
+          </div>
+    
+          <!-- Mobile menu -->
+          <div id="mobileDropdown" class="md:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out bg-white">
+            <ul class="space-y-2 py-4 px-4">
+              <li><a href="/public/index.html" class="block py-2 hover:bg-[#e6f1e8] nav-link">Home</a></li>
+              <li><a href="/public/product-list.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Produk</a></li>
+              <li><a href="/public/about.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Tentang Kami</a></li>
+              <li><a href="/public/contact.html" class="block py-2 hover:bg-[#E6F1E8] nav-link">Kontak</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <!-- Kontak Kami -->
+  <section class="py-16 px-4 md:px-20 bg-[#EDE9D5]" id="kontak">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#433E0E]">Hubungi Kami</h2>
+      
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="md:w-1/2">
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <h3 class="text-xl font-semibold mb-6 text-[#433E0E]">Kirim Pesan</h3>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block mb-2 text-[#5C5E4A]">Nama Lengkap</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border border-[#D6CC99] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#433E0E]">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block mb-2 text-[#5C5E4A]">Alamat Email</label>
+                <input type="email" id="email" class="w-full px-4 py-2 border border-[#D6CC99] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#433E0E]">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block mb-2 text-[#5C5E4A]">Pesan Anda</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-[#D6CC99] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#433E0E]"></textarea>
+              </div>
+              <button type="submit" class="bg-[#433E0E] text-[#FDFBF0] px-6 py-3 rounded-lg hover:bg-[#5C5E4A] transition">Kirim Pesan</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2">
+          <div class="bg-white p-8 rounded-xl shadow-md h-full">
+            <h3 class="text-xl font-semibold mb-6 text-[#433E0E]">Info Kontak</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-[#D6CC99] p-3 rounded-full mr-4">
+                  <i class="ri-map-pin-2-line text-[#433E0E]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[#433E0E]">Alamat</h4>
+                  <p class="text-[#5C5E4A]">Jl. Dukuh Kupang No. 123,
+                    Surabaya, Jawa Timur
+                    Indonesia</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-[#D6CC99] p-3 rounded-full mr-4">
+                  <i class="ri-phone-line text-[#433E0E]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[#433E0E]">Telepon</h4>
+                  <p class="text-[#5C5E4A]">(022) 1234567</p>
+                  <p class="text-[#5C5E4A]">057-1418-6422 (WhatsApp)</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-[#D6CC99] p-3 rounded-full mr-4">
+                  <i class="ri-mail-line text-[#433E0E]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[#433E0E]">Email</h4>
+                  <p class="text-[#5C5E4A]">Account@organiksejahtera.id</p>
+                  <p class="text-[#5C5E4A]">cs@organiksejahtera.id</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-[#D6CC99] p-3 rounded-full mr-4">
+                  <i class="ri-time-line text-[#433E0E]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[#433E0E]">Jam Operasional</h4>
+                  <p class="text-[#5C5E4A]">Senin - Jumat: 08.00 - 17.00 WIB</p>
+                  <p class="text-[#5C5E4A]">Sabtu: 08.00 - 15.00 WIB</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Peta Lokasi -->
+    <section class="bg-white py-8 px-4 md:px-20">
+        <div class="container mx-auto">
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4797721956165!2d112.76195356846013!3d-7.2998696556163285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa5385e1323d%3A0xd34919933df0314!2sSekolah%20Menengah%20Kejuruan%2017%20Agustus%201945%20Surabaya!5e0!3m2!1sid!2sid!4v1744770594521!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#433E0E] text-[#FDFBF0] py-12" id="footer">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <img src="../src/img/logo-white.png" alt="Logo OrganikSejahtera" class="max-h-18 max-w-[240px] mb-4">
+          <p>Menyediakan produk pertanian organik berkualitas sejak 2010.</p>
+          <div class="flex mt-4 space-x-4">
+            <a href="#" class="text-[#FDFBF0] hover:text-[#D6CC99] transition"><i class="ri-facebook-fill text-xl"></i></a>
+            <a href="#" class="text-[#FDFBF0] hover:text-[#D6CC99] transition"><i class="ri-instagram-line text-xl"></i></a>
+            <a href="#" class="text-[#FDFBF0] hover:text-[#D6CC99] transition"><i class="ri-twitter-fill text-xl"></i></a>
+            <a href="#" class="text-[#FDFBF0] hover:text-[#D6CC99] transition"><i class="ri-youtube-fill text-xl"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+          <ul class="space-y-2">
+            <li><a href="/public/index.html" class="hover:text-[#D6CC99] transition">Home</a></li>
+            <li><a href="/public/product-list.html" class="hover:text-[#D6CC99] transition">Produk</a></li>
+            <li><a href="/public/about.html" class="hover:text-[#D6CC99] transition">Tentang Kami</a></li>
+            <li><a href="/public/contact.html" class="hover:text-[#D6CC99] transition">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Produk</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-[#D6CC99] transition">Sayuran Organik</a></li>
+            <li><a href="#" class="hover:text-[#D6CC99] transition">Buah-buahan Organik</a></li>
+            <li><a href="#" class="hover:text-[#D6CC99] transition">Beras Organik</a></li>
+            <li><a href="#" class="hover:text-[#D6CC99] transition">Produk Olahan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Hubungi Kami</h4>
+          <address class="not-italic">
+            Jl. Dukuh Kupang No. 123<br>
+            Surabaya, Jawa Timur<br>
+            Indonesia<br>
+            <br>
+            Email: account@organiksejahtera.id<br>
+            Telepon: (022) 1234567
+          </address>
+        </div>
+    </div>
+      <div class="border-t border-[#FDFBF0]/20 mt-8 pt-8 text-center">
+        <p>&copy; 2023 OrganikSejahtera. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
